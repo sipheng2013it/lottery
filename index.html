@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #demo,
+    .numsut,
+    #demo333 {
+        border: 1px solid black;
+        background-color: lightblue;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        padding-left: 30px;
+    }
+</style>
+
+<body>
+
+
+
+    <h2>Risk Lotto By Sipheng</h2>
+    <hr>
+    <button onclick="myFunction()">ran 0-99</button>
+    <button onclick="myFunction3()">ran 0-999</button>
+    <button onclick="myFunction4g()">ran 0-9999</button>
+
+
+    <h2>2 degit</h2>
+    <p id="demo">output1</p>
+    <h2>3 degit</h2>
+    <p id="demo333">output1</p>
+    <h2>4 degit</h2>
+    <p id="demo4g">output1</p>
+    <hr>
+    <button onclick="myFunction2()">ran 3/40</button>
+
+
+
+    <h2>4/40</h2>
+    <div class="numsut">
+        <div id="demo2">output2</div>
+        <div id="demo3">output2</div>
+        <div id="demo4">output2</div>
+        <div id="demo5">output2</div>
+    </div>
+
+    <hr>
+    <button onclick="myFunction4()">ran 3 number</button>
+    <h2>fact 3 random</h2>
+
+    <input id="Id1" type="text"><br>
+    <input id="Id2" placeholder="enter number" type="text" style="height: 30; width: 30;"><br>
+    <input id="Id3" type="text"><br>
+
+    <div id="demo6">3factor</div>
+    <script>
+        //const points = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        //document.getElementById("demo").innerHTML = points;
+
+
+        //0-999
+
+        function myFunction3() {
+            //0-999
+            // let points1 = Math.floor(Math.random() * 100);
+            var output = Math.floor(Math.random() * 100);
+            let x = 0;
+            let y = 0;
+
+
+
+            if (output < 10) {
+
+                document.getElementById("demo333").innerHTML = x.toString() + y.toString() + output;
+                console.log(x.toString() + y.toString() + output);
+            }
+            if (output > 9 && output <= 99) {
+                document.getElementById("demo333").innerHTML = (x.toString() + output);
+                console.log(x.toString() + output);
+
+            } else {
+
+                document.getElementById("demo333").innerHTML = output;
+            }
+
+        }
+
+
+        //0-99
+        function myFunction() {
+            // let points1 = Math.floor(Math.random() * 100);
+            var output = Math.floor(Math.random() * 100);
+            let x = 0;
+            //console.log(output.length);
+            //console.log(x.toString() + output);
+
+
+
+            if (output < 10) {
+                document.getElementById("demo").innerHTML = (x.toString() + output);
+            } else {
+                document.getElementById("demo").innerHTML = output;
+            }
+
+
+
+        }
+
+        //0-9999
+        function myFunction4g() {
+            // let points1 = Math.floor(Math.random() * 100);
+            //const f3 = myFunction3();
+
+            var output = Math.floor(Math.random() * 9999);
+            let x = 0;
+            let y = 0;
+            if (output < 1000) {
+                document.getElementById("demo4g").innerHTML = x.toString() + output;
+            } else if ((output > 10 && output <= 99)) {
+                document.getElementById("demo4g").innerHTML = x.toString() + y.toString() + output;
+
+            } else {
+                document.getElementById("demo4g").innerHTML = output;
+                console.log(output);
+
+            }
+
+        }
+
+
+
+        //0-40   3/40
+        function myFunction2() {
+            //let points2 = Math.round(Math.random() * 40) + 0;
+            document.getElementById("demo2").innerHTML = Math.round(Math.random() * 40);
+            document.getElementById("demo3").innerHTML = Math.round(Math.random() * 40);
+            document.getElementById("demo4").innerHTML = Math.round(Math.random() * 40);
+            document.getElementById("demo5").innerHTML = Math.round(Math.random() * 40);
+        }
+        //random factor 3 ditgit
+        //************************
+
+
+        function myFunction4() {
+
+
+
+            var num1 = document.getElementById("Id1").value;
+            var num2 = document.getElementById("Id2").value;
+            var num3 = document.getElementById("Id3").value;
+
+
+
+            //<!-- var num1 = 1; -->
+            // <!-- var num2 = 2; -->
+            //<!-- var num3 = 3; -->
+
+
+
+            const fruits = [num1, num2, num3];
+            let fLen = fruits.length;
+
+            let text = "<ul>";
+            for (let k = 0; k < fLen; k++) {
+
+                for (let j = 0; j < fLen; j++) {
+
+
+                    for (let i = 0; i < fLen; i++) {
+                        if (fruits[k] !== fruits[i] && fruits[i] !== fruits[j] && fruits[k] !== fruits[j]) {
+                            text += "<li>" + fruits[k] + fruits[i] + fruits[j] + "</li>";
+                        }
+
+
+                    }
+                }
+            }
+            text += "</ul>";
+
+            document.getElementById("demo6").innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>
